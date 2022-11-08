@@ -43,7 +43,7 @@ const generatePassword = function (len) {
 		}
 
 		if (symbolsEl.checked && password.length < len) {
-			password += numbers[generateRandNum(symbols.length)];
+			password += symbols[generateRandNum(symbols.length)];
 		}
 	}
 	return password;
