@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--main-color: #a4ffaf;
+	--gray-color: #24232b;
+	--bg-color: #0f0e14;
+	--bg-light: #12111781;
+	--yellow: #f4cb69;
+	--red: red;
+	--green: #a4ffaf;
+}
+
+body {
+	background-color: var(--bg-color);
+	font-family: 'Cairo', sans-serif;
+	color: white;
+	height: 100vh;
+}
+
+svg {
+	width: 24px;
+	height: 24px;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 600px;
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.container h2 {
+	text-align: center;
+	color: #868e96;
+}
+
+.password-display,
+.password-settings {
+	background-color: var(--gray-color);
+	padding: 20px;
+}
+
+.password-display {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.password-display .pass {
+	font-weight: bold;
+	font-size: 32px;
+	letter-spacing: 2px;
+}
+
+.password-display .copy {
+	color: var(--main-color);
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.password-display .copy:hover {
+	transform: scale(1.1);
+}
+.password-display .copy:active {
+	transform: rotate(0.1turn) scale(0.5);
+}
+.password-settings {
+	min-height: 400px;
+}
+
+.password-settings .length > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.password-settings .length > div span:last-child {
+	font-size: 28px;
+	color: var(--main-color);
+}
+
+.password-settings .length input[type='range'] {
+	-webkit-appearance: none; /* Override default CSS styles */
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: 8px; /* Specified height */
+	background: var(--bg-color); /* Grey background */
+	outline: none; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+	transition: opacity 0.2s;
+}
+
+.password-settings .length input[type='range']:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+}
+
+.password-settings .length input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	border-radius: 50%;
+	background: white; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+}
+
+.password-settings .length input[type='range']::-webkit-slider-thumb:hover {
+	background-color: var(--bg-color);
+	border: 2px solid var(--main-color);
+	border-radius: 50%;
+}
+
+.password-settings .length input[type='range']::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: var(--main-color);
+	transition: 0.2s;
+}
+
+.password-settings .add-settings {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	gap: 10px;
+}
+
+.password-settings .setting {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.password-settings .setting span {
+	font-size: 20px;
+}
+
+.password-settings .setting input[type='checkbox'] {
+	appearance: none;
+	-webkit-appearance: nonce;
+	height: 18px;
+	width: 18px;
+	background-color: var(--gray-color);
+	border: 2px solid white;
+	cursor: pointer;
+	transition: 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+label {
+	cursor: pointer;
+}
+
+.password-settings .setting input[type='checkbox']:after {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: '\f00c';
+	font-size: 18px;
+	color: var(--bg-color);
+	display: none;
+}
+
+.password-settings .setting input[type='checkbox']:hover {
+	border-color: var(--main-color);
+}
+
+.password-settings .setting input[type='checkbox']:checked {
+	background-color: var(--main-color);
+	border-color: var(--main-color);
+}
+
+.password-settings .setting input[type='checkbox']:checked:after {
+	display: block;
+}
+
+.password-settings .strength {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: var(--bg-light);
+	margin-top: 20px;
+}
+
+.password-settings .strength > span {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #656d6d;
+	font-weight: bold;
+}
+
+.password-settings .strength .level {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.password-settings .strength .level > span {
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 26px;
+	text-transform: uppercase;
+}
+
+.password-settings .strength .level #level-indicators {
+	height: 40px;
+}
+
+.password-settings .strength .level #level-indicators > span {
+	display: inline-block;
+	width: 14px;
+	height: 100%;
+	border: 1px solid white;
+	margin: 0px 1px;
+}
+
+.password-settings .generate-btn {
+	background-color: var(--main-color);
+	padding: 30px;
+	width: 100%;
+	font-family: 'Cairo', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.password-settings .generate-btn .arrow {
+	height: 20px;
+	width: 20px;
+	margin-left: 15px;
+}
+
+#level-indicators.easy span:first-child {
+	background-color: var(--red);
+	border-color: var(--red) !important;
+}
+#level-indicators.medium span:not(:last-child) {
+	background-color: var(--yellow);
+	border-color: var(--yellow) !important;
+}
+#level-indicators.hard span {
+	background-color: var(--green);
+	border-color: var(--green) !important;
+}
+
+@media (max-width: 767px) {
+	.container {
+		width: 400px;
+	}
+}

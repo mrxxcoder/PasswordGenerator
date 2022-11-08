@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Password Generator</title>
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<h2>Password Generator</h2>
+				<div class="password-display">
+					<div class="pass">MX4#$**@2</div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="copy"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z"
+						/>
+					</svg>
+				</div>
+				<div class="password-settings">
+					<div class="length">
+						<div>
+							<span>Character Length</span>
+							<span id="length">8</span>
+						</div>
+						<input
+							type="range"
+							min="1"
+							max="16"
+							size="16"
+							value="8"
+							id="length-input"
+						/>
+					</div>
+					<div class="add-settings">
+						<div class="setting">
+							<input type="checkbox" id="uppercase" checked />
+							<div class="check"></div>
+							<label for="uppercase">Include Uppercase Letters</label>
+						</div>
+						<div class="setting">
+							<input type="checkbox" id="lowercase" />
+							<div class="check"></div>
+							<span>Include Lowercase Letters</span>
+						</div>
+						<div class="setting">
+							<input type="checkbox" id="numbers" />
+							<div class="check"></div>
+							<span>Include Numbers</span>
+						</div>
+						<div class="setting">
+							<input type="checkbox" id="symbols" />
+							<div class="check"></div>
+							<span>Include Symbols</span>
+						</div>
+					</div>
+
+					<div class="strength">
+						<span>Strength</span>
+						<div class="level">
+							<span>MEDIUM</span>
+							<div class="medium" id="level-indicators">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</div>
+					<button class="generate-btn">
+						Generate
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="arrow"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
